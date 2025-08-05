@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/logo.png" alt="New Generation HVAC logo" class="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="content">
+        <h2>Contact Us</h2>
+        <p>Ready to improve your comfort? Get in touch with us today. Fill out the form below, and we'll get back to you as soon as possible.</p>
+        <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you soon.');">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <h3>Our Location</h3>
+        <p>Based in Methuen, Massachusetts. Serving Methuen and surrounding areas.</p>
+        <div style="overflow:hidden; width:100%; height:300px; margin-top:20px;">
+            <iframe style="width:100%; height:100%; border:0;" src="https://www.google.com/maps?q=Methuen%2C%20MA&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Contact | New Generation HVAC</p>
+        <p>Based in Methuen, Massachusetts</p>
+        <p>Phone: <a href="tel:9788768558" style="color: #66c0ff;">978-876-8558</a> | Email: <a href="mailto:jc@newgenhvac.com" style="color: #66c0ff;">jc@newgenhvac.com</a></p>
+        <p>Follow us on Instagram: <a href="https://www.instagram.com/newgeneration.hvac" style="color: #66c0ff;">@newgeneration.hvac</a></p>
+    </footer>
+</body>
+</html>
