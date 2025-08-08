@@ -170,3 +170,61 @@ footer p {
     .hero h1 { font-size: 2rem; }
     .hero p { font-size: 1rem; }
 }
+/* ========= Mobile & small screens ========= */
+@media (max-width: 768px) {
+  header nav a {
+    display: inline-block;
+    margin: 6px 8px;
+    padding: 6px 8px;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 1.9rem; line-height: 1.2; }
+  .hero p  { font-size: 1rem;   margin-top: 8px; }
+
+  .content {
+    padding: 24px 16px;
+  }
+
+  /* Service lists / grids collapse cleanly */
+  .services-list,
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Cards & sections spacing */
+  .testimonial {
+    padding: 16px;
+  }
+
+  footer {
+    padding: 16px;
+    text-align: center;
+  }
+  .social-icons a {
+    margin: 0 8px;
+  }
+}
+
+/* Slightly wider phones / small tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-list,
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
