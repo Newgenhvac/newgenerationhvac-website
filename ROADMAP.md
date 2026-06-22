@@ -68,8 +68,10 @@ Reduce the cost of every future change.
   duplication genuinely hurts.)*
 - ✅ **Move inline styles to `style.css`.** Footer link colors moved to a
   `footer a` rule; inline `style="color:…"` removed from every page.
-- ⬜ **Add a mobile nav.** The header nav can get cramped on small screens;
-  add a simple hamburger toggle.
+- ✅ **Fix the mobile nav.** Browser testing revealed the nav overflowed
+  off-screen on phones (Gallery/Contact were cut off). The header now stacks and
+  the nav wraps and centers on small screens. *(A hamburger toggle remains a
+  possible future enhancement.)*
 - 🔄 **Accessibility pass.** Added keyboard focus-visible styles and a
   "skip to main content" link on every page. Still to do: color-contrast audit
   and meaningful `alt` text once real photos are in.
