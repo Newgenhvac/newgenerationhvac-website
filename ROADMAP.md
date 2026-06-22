@@ -28,30 +28,34 @@ These were silently breaking the live site. **Done in this update.**
 Small config tasks that unblock measurement and lead capture.
 
 - ⬜ **Activate Google Analytics.** Replace the `G-XXXXXXXXXX` placeholder in
-  every page's `<head>` with the real GA4 Measurement ID. *(~15 min)*
+  every page's `<head>` with the real GA4 Measurement ID. *(~15 min — owner
+  action: needs the real ID)*
 - ⬜ **Verify the contact form.** Submit a test through FormSubmit, complete its
   one-time email activation, and confirm the redirect to `thankyou.html` works.
-  *(~20 min)*
-- ⬜ **Compress images.** `hero-bg.png` (2.5 MB), `ventilation.png` (2.3 MB) and
-  `logo.png` (1.3 MB) make the site slow on mobile. Convert to WebP/optimized
-  JPEG and resize the logo to display size (target each file < 200 KB).
-  *(~1 hr, biggest perceived-speed win)*
-- ⬜ **Add a favicon file** (`favicon.ico` / sized PNG) instead of reusing the
-  full logo. *(~15 min)*
+  *(~20 min — owner action: needs the activation email)*
+- ✅ **Compress images.** `hero-bg.png` (2.5 MB) → 71 KB WebP / 181 KB JPG;
+  `ventilation.png` (2.3 MB) → 64 KB WebP; `logo.png` (1.3 MB) → 47 KB. Total
+  image weight dropped from ~6 MB to ~0.5 MB. WebP served with JPG fallback via
+  `<picture>` and CSS `image-set`.
+- ✅ **Add a favicon file.** Generated `favicon.ico` and `images/favicon.png`
+  (32px) instead of loading the full logo as the icon.
 
 ## Phase 2 — Trust & conversion (next 2–3 weeks)
 
 Turn visitors into phone calls and quote requests.
 
-- ⬜ **Sticky / repeated call-to-action.** A persistent "Call 978-876-8558"
-  button (especially on mobile) on every page, not just the hero.
-- ⬜ **Customer reviews / testimonials section.** Pull Google reviews or add 3–5
-  quotes with names and towns. Single biggest trust signal for local services.
+- ✅ **Sticky / repeated call-to-action.** A persistent floating "☎ Call" button
+  is injected on every page via `main.js`.
+- 🔄 **Customer reviews / testimonials section.** Markup + styling are in place
+  on the home page as a ready-to-fill template (commented out). *Owner action:
+  paste 3–5 real Google reviews and uncomment — do not invent reviews.*
 - ⬜ **Real project photos** in the gallery, replacing the placeholder
-  illustrations with actual jobs (before/after sells well).
-- ⬜ **Service-area clarity.** List the specific towns served near Methuen
-  (e.g. Lawrence, Andover, Haverhill) — strong local-SEO and trust signal.
+  illustrations with actual jobs (before/after sells well). *(Owner action:
+  provide photos.)*
+- ✅ **Service-area clarity.** Footer now names Methuen, Lawrence, Andover,
+  North Andover and Haverhill — strengthens local SEO.
 - ⬜ **Hours, license # and "emergency service" availability** in the footer.
+  *(Owner action: provide real hours / license # — not fabricated.)*
 
 ## Phase 3 — Maintainability (parallel, as time allows)
 
@@ -59,18 +63,22 @@ Reduce the cost of every future change.
 
 - ⬜ **Eliminate duplicated markup.** The header/nav and footer are copy-pasted
   into 6 files; a single typo fix means six edits. Options: a tiny build step
-  (e.g. `eleventy`) or a small JS include. *(Pick the lightest option.)*
-- ⬜ **Move inline styles to `style.css`.** The footer link colors are inlined on
-  every page; centralize them.
+  (e.g. `eleventy`) or a small JS include. *(Pick the lightest option. Deferred
+  intentionally: keeping plain static HTML is simplest for GitHub Pages until
+  duplication genuinely hurts.)*
+- ✅ **Move inline styles to `style.css`.** Footer link colors moved to a
+  `footer a` rule; inline `style="color:…"` removed from every page.
 - ⬜ **Add a mobile nav.** The header nav can get cramped on small screens;
   add a simple hamburger toggle.
-- ⬜ **Accessibility pass.** Color-contrast check, focus styles, a "skip to
-  content" link, and meaningful `alt` text once real photos are in.
+- 🔄 **Accessibility pass.** Added keyboard focus-visible styles and a
+  "skip to main content" link on every page. Still to do: color-contrast audit
+  and meaningful `alt` text once real photos are in.
 
 ## Phase 4 — Growth (next quarter)
 
-- ⬜ **Local SEO / Google Business Profile** linkage and `LocalBusiness`
-  structured data (JSON-LD) for rich search results.
+- 🔄 **Local SEO / Google Business Profile.** `LocalBusiness` (HVACBusiness)
+  structured data (JSON-LD) added to the home page. Still to do: link/verify the
+  Google Business Profile.
 - ⬜ **Per-service landing pages** (e.g. "NFPA 96 Hood Cleaning in Methuen") to
   capture specific searches.
 - ⬜ **Seasonal promotions** surfaced on the home page (tune-up specials).
