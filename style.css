@@ -18,7 +18,10 @@ header {
     z-index: 100;
 }
 header img.logo {
-    height: 60px;
+    display: block;
+    height: 72px;
+    width: auto;
+    object-fit: contain;
 }
 nav ul {
     list-style: none;
@@ -38,7 +41,7 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 .hero {
-    background-image: url('images/hero-bg.png');
+    background-image: url('hero-bg.png');
     background-size: cover;
     background-position: center;
     height: 60vh;
